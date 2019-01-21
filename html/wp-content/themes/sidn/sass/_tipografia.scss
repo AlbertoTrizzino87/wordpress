@@ -1,0 +1,13 @@
+$fuentePrincipal: 'Roboto', sans-serif;
+$funteSecundaria:'Roboto', sans-serif;
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: $colorTexto;
+	font-family: $fuentePrincipal;
+}
+

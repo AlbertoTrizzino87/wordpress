@@ -1,0 +1,326 @@
+/*!
+Theme Name: Sidn
+Theme URI: http://sidn.es/
+Author: Sidn
+Author URI: http://sidn.es/
+Description: Plantilla equipo Sidn
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: sidn
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+--------------------------------------------------------------*/
+@import "colores";
+@import "tipografia";
+@import "tamano-fuentes";
+@import "mixins/media-queries";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+
+/*--------------------------------------------------------------
+# Menu
+--------------------------------------------------------------*/
+@import "header/menu";
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+@import "footer";
+
+.main-header{
+	width: 100%;
+	padding: 0px 15px;
+	@include max-screen-lg{
+		padding: 5px 15px;
+	}
+	background-color: $colorNav;
+	position: relative;
+	/*Maquetación header logo a la izquierda*/
+	.header-izquierda{
+		width: 100%;
+		display: -webkit-box; 
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex; 
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		.logo{
+			margin-right: auto;
+		}
+		.hamburguesa{
+			color: $color-menu-hamburguesa;
+			font-size: $size-menu-hamburguesa;
+			@include min-screen-lg{
+				display: none;
+			}
+		}
+		.navegacion{
+			display: block;
+			@include max-screen-lg{
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background-color: $color-navegacion-responsive;
+				width: 100%;
+				display: none;
+				padding-bottom: 10px;
+			}
+			ul.menu{
+				display: -webkit-box; 
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex; 
+				display: flex;
+				justify-content: flex-start;
+				align-items: flex-start;
+				margin-bottom: 0;
+				@include max-screen-lg{
+					padding-left: 15px;
+					flex-flow: column;
+				}
+				li{
+					list-style: none;
+					margin-right: 15px;
+					line-height: 50px;
+					@include max-screen-lg{
+						line-height: 40px;
+					}
+					a{
+						color: $color-nav-item;
+					}
+					.dropdown-icon{
+						color: $color-icono-dropdown;
+						cursor: pointer;
+					}
+					ul.sub-menu{
+						background-color: $color-sub-menu;
+						position: absolute;
+						top: 100%;
+						padding: 10px;
+						display: none;
+						transition: all 500 linear;
+						@include max-screen-lg{
+							background-color: $color-sub-menu-responsive;
+							position: static;
+						}
+						li{
+							line-height: 40px;
+							a{
+								color: $color-sub-menu-item;
+							}
+						}
+					}
+					@include min-screen-lg{
+						&:hover{
+							ul.sub-menu{
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/*Maquetación header logo a la derecha*/
+	.header-derecha{
+		width: 100%;
+		display: -webkit-box; 
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex; 
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		.logo{
+			margin-left: auto;
+		}
+		.hamburguesa{
+			color: $color-menu-hamburguesa;
+			font-size: $size-menu-hamburguesa;
+			@include min-screen-lg{
+				display: none;
+			}
+		}
+		.navegacion{
+			display: block;
+			@include max-screen-lg{
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background-color: $color-navegacion-responsive;
+				width: 100%;
+				display: none;
+			}
+			ul.menu{
+				display: -webkit-box; 
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex; 
+				display: flex;
+				justify-content: flex-start;
+				align-items: flex-start;
+				margin-bottom: 0;
+				padding-left: 0;
+				@include max-screen-lg{
+					padding-left: 15px;
+					flex-flow: column;
+					padding-bottom: 10px;
+				}
+				li{
+					list-style: none;
+					margin-right: 15px;
+					line-height: 50px;
+					@include max-screen-lg{
+						line-height: 40px;
+					}
+					a{
+						color: $color-nav-item;
+					}
+					.dropdown-icon{
+						color: $color-icono-dropdown;
+						cursor: pointer;
+					}
+					ul.sub-menu{
+						background-color: $color-sub-menu;
+						position: absolute;
+						top: 100%;
+						padding: 10px;
+						display: none;
+						transition: all 500 linear;
+						@include max-screen-lg{
+							background-color: $color-sub-menu-responsive;
+							position: static;
+						}
+						li{
+							line-height: 40px;
+							a{
+								color: $color-sub-menu-item;
+							}
+						}
+					}
+					@include min-screen-lg{
+						&:hover{
+							ul.sub-menu{
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/*Maquetación Header con logotipo en el centro*/
+	.header-centro{
+		width: 100%;
+		display: -webkit-box; 
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex; 
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		@include max-screen-md{
+			flex-wrap: nowrap;
+			align-items: center;
+		}
+		.logo{
+			width: 100%;
+			text-align: center;
+			padding-top: 20px;
+			@include max-screen-md{
+				width: auto;
+				text-align: left;
+				padding-top: 0;
+				margin-right: auto;
+			}
+		}
+		.hamburguesa{
+			color: $color-menu-hamburguesa;
+			font-size: $size-menu-hamburguesa;
+			@include min-screen-md{
+				display: none;
+			}
+		}
+		.navegacion{
+			width: 100%;
+			display: block;
+			@include max-screen-md{
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background-color: $color-navegacion-responsive;
+				width: 100%;
+				display: none;
+				padding-bottom: 10px;
+			}
+			ul.menu{
+				display: -webkit-box; 
+				display: -moz-box;
+				display: -ms-flexbox;
+				display: -webkit-flex; 
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 0;
+				@include max-screen-md{
+					padding-left: 15px;
+					flex-flow: column;
+					justify-content: flex-start;
+					align-items: flex-start;
+				}
+				li{
+					list-style: none;
+					margin-right: 15px;
+					line-height: 50px;
+					@include max-screen-lg{
+						line-height: 40px;
+					}
+					a{
+						color: $color-nav-item;
+					}
+					.dropdown-icon{
+						color: $color-icono-dropdown;
+						cursor: pointer;
+					}
+					ul.sub-menu{
+						background-color: $color-sub-menu;
+						position: absolute;
+						top: 100%;
+						padding: 10px;
+						display: none;
+						transition: all 500 linear;
+						@include max-screen-lg{
+							background-color: $color-sub-menu-responsive;
+							position: static;
+						}
+						li{
+							line-height: 40px;
+							a{
+								color: $color-sub-menu-item;
+							}
+						}
+					}
+					@include min-screen-md{
+						&:hover{
+							ul.sub-menu{
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,58 @@
+// MEDIA QUERIES (medidas bootstrap)
+
+
+//575px & lower
+@mixin max-screen-sm{
+	@media (max-width: 575px) { 
+		@content;
+	}
+}
+
+//576px & higher
+@mixin min-screen-sm{
+	@media (min-width: 576px) { 
+		@content;
+	}
+}
+
+//767px & lower
+@mixin max-screen-md{
+	@media (max-width: 767px) { 
+		@content;
+	}
+}
+
+//768px & higher
+@mixin min-screen-md{
+	@media (min-width: 768px) { 
+		@content;
+	}
+}
+
+//991px & lower
+@mixin max-screen-lg{
+	@media (max-width: 991px) { 
+		@content;
+	} 
+}
+
+//992px & higher
+@mixin min-screen-lg{
+	@media (min-width: 992px) { 
+		@content;
+	} 
+}
+
+//1199px & lower
+@mixin max-screen-xl{
+	@media (max-width: 1199px) { 
+		@content;
+	} 
+}
+
+//1200px & higher
+@mixin min-screen-xl{
+	@media (min-width: 1200px) { 
+		@content;
+	} 
+}
